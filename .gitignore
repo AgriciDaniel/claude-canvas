@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Canvas backups
+*.canvas.bak
+*.canvas.bak*
+
+# Export outputs
+exports/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Generated media
+.canvases/assets/

@@ -1,0 +1,71 @@
+{
+  "name": "Kanban",
+  "description": "Column-based task board with Todo, Doing, and Done zones. Each column gets its own set of task cards.",
+  "layout": "grid",
+  "defaults": {
+    "cards_per_column": 3,
+    "color_title": "6",
+    "color_body": "1",
+    "color_accent": "4"
+  },
+  "node_templates": [
+    {
+      "role": "column_todo",
+      "type": "group",
+      "repeat": 1,
+      "label": "Todo",
+      "width": 400,
+      "height": 600,
+      "color": "1"
+    },
+    {
+      "role": "column_doing",
+      "type": "group",
+      "repeat": 1,
+      "label": "Doing",
+      "width": 400,
+      "height": 600,
+      "color": "2"
+    },
+    {
+      "role": "column_done",
+      "type": "group",
+      "repeat": 1,
+      "label": "Done",
+      "width": 400,
+      "height": 600,
+      "color": "4"
+    },
+    {
+      "role": "card_todo",
+      "type": "text",
+      "repeat": "$cards_per_column",
+      "repeat_default": 3,
+      "group_role": "column_todo",
+      "text": "### Task {n}\n\nDescribe what needs to be done.",
+      "width": 340,
+      "height": 100
+    },
+    {
+      "role": "card_doing",
+      "type": "text",
+      "repeat": "$cards_per_column",
+      "repeat_default": 3,
+      "group_role": "column_doing",
+      "text": "### In Progress {n}\n\nCurrently being worked on.",
+      "width": 340,
+      "height": 100
+    },
+    {
+      "role": "card_done",
+      "type": "text",
+      "repeat": "$cards_per_column",
+      "repeat_default": 3,
+      "group_role": "column_done",
+      "text": "### Completed {n}\n\nFinished and verified.",
+      "width": 340,
+      "height": 100
+    }
+  ],
+  "edge_templates": []
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Presentation",
+  "description": "Slide deck for Advanced Canvas presentation mode. Groups connected by edges for arrow-key navigation.",
+  "layout": "linear-vertical",
+  "defaults": {
+    "slide_count": 6,
+    "gap": 100,
+    "color_title": "6",
+    "color_body": "4",
+    "color_accent": "5"
+  },
+  "node_templates": [
+    {
+      "role": "slide",
+      "type": "group",
+      "repeat": "$slide_count",
+      "repeat_default": 6,
+      "label": "Slide {n}",
+      "width": 1200,
+      "height": 675,
+      "color": "$color_body"
+    },
+    {
+      "role": "slide_title",
+      "type": "text",
+      "repeat": "$slide_count",
+      "repeat_default": 6,
+      "group_role": "slide",
+      "text": "# Slide {n}\n\nAdd your content for this slide.",
+      "width": 1140,
+      "height": 200,
+      "color": "$color_title"
+    }
+  ],
+  "edge_templates": [
+    {
+      "from_role": "slide",
+      "to_role": "slide",
+      "pattern": "sequential"
+    }
+  ]
+}

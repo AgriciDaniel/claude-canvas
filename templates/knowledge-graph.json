@@ -1,0 +1,26 @@
+{
+  "name": "Knowledge Graph",
+  "description": "Entity-relationship map with concept nodes and labeled edges. Use force layout for organic arrangement.",
+  "layout": "grid",
+  "post_layout": "force",
+  "defaults": {
+    "entity_count": 8,
+    "columns": 4,
+    "color_title": "6",
+    "color_body": "5",
+    "color_accent": "4"
+  },
+  "node_templates": [
+    {
+      "role": "entity",
+      "type": "text",
+      "repeat": "$entity_count",
+      "repeat_default": 8,
+      "text": "## Entity {n}\n\n**Type**: Concept\n**Role**: How this entity relates to the domain.",
+      "width": 260,
+      "height": 140,
+      "color": "$color_body"
+    }
+  ],
+  "edge_templates": []
+}

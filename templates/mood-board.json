@@ -1,0 +1,44 @@
+{
+  "name": "Mood Board",
+  "description": "Asymmetric image grid for creative direction. Placeholder slots for images with color-coded zones.",
+  "layout": "grid",
+  "defaults": {
+    "image_count": 8,
+    "columns": 3,
+    "color_title": "6",
+    "color_body": "3",
+    "color_accent": "2"
+  },
+  "node_templates": [
+    {
+      "role": "title_card",
+      "type": "text",
+      "repeat": 1,
+      "text": "# $title\n\n**Mood**: Describe the feeling\n**Colors**: List palette\n**Style**: Describe aesthetic",
+      "width": 400,
+      "height": 200,
+      "color": "$color_title"
+    },
+    {
+      "role": "inspiration_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Inspiration",
+      "width": 1400,
+      "height": 900,
+      "color": "$color_body"
+    },
+    {
+      "role": "image_slot",
+      "type": "text",
+      "repeat": "$image_count",
+      "repeat_default": 8,
+      "group_role": "inspiration_zone",
+      "text": "**Image {n}**\n\nReplace with `/canvas add image` or `/canvas add banana`",
+      "width": 380,
+      "height": 285,
+      "color": "$color_accent"
+    }
+  ],
+  "edge_templates": []
+}

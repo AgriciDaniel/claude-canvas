@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "If you just wrote or edited a .canvas file, verify it passes validation by running: python3 scripts/canvas_validate.py <path> (use the plugin's scripts/ directory)."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Mind Map",
+  "description": "Radial layout expanding from a central topic. Good for brainstorming and concept exploration.",
+  "layout": "grid",
+  "post_layout": "radial",
+  "defaults": {
+    "branch_count": 5,
+    "color_title": "6",
+    "color_body": "5",
+    "color_accent": "3"
+  },
+  "node_templates": [
+    {
+      "role": "center",
+      "type": "text",
+      "repeat": 1,
+      "text": "# $title\n\nCentral topic — expand outward with branches.",
+      "width": 300,
+      "height": 120,
+      "color": "$color_title"
+    },
+    {
+      "role": "branch",
+      "type": "text",
+      "repeat": "$branch_count",
+      "repeat_default": 5,
+      "text": "## Branch {n}\n\nExplore this angle of the topic.",
+      "width": 240,
+      "height": 100,
+      "color": "$color_body"
+    }
+  ],
+  "edge_templates": [
+    {
+      "from_role": "center",
+      "to_role": "branch",
+      "pattern": "broadcast"
+    }
+  ]
+}

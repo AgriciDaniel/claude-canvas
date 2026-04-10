@@ -1,0 +1,35 @@
+{
+  "name": "Gallery",
+  "description": "Grid of image placeholder nodes with a title zone. Good for showcases and mood boards.",
+  "layout": "grid",
+  "defaults": {
+    "image_count": 9,
+    "columns": 3,
+    "color_title": "6",
+    "color_body": "4",
+    "color_accent": "3"
+  },
+  "node_templates": [
+    {
+      "role": "gallery_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "$title",
+      "width": 1400,
+      "height": 1000,
+      "color": "$color_body"
+    },
+    {
+      "role": "image_slot",
+      "type": "text",
+      "repeat": "$image_count",
+      "repeat_default": 9,
+      "group_role": "gallery_zone",
+      "text": "**Image {n}**\n\nReplace with `/canvas add image`",
+      "width": 380,
+      "height": 285,
+      "color": "$color_accent"
+    }
+  ],
+  "edge_templates": []
+}

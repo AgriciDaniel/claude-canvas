@@ -1,0 +1,31 @@
+{
+  "name": "Flowchart",
+  "description": "Process flow diagram with step nodes connected by edges. Uses dagre layout.",
+  "layout": "linear-vertical",
+  "post_layout": "dagre",
+  "defaults": {
+    "step_count": 5,
+    "color_title": "6",
+    "color_body": "5",
+    "color_accent": "3"
+  },
+  "node_templates": [
+    {
+      "role": "step",
+      "type": "text",
+      "repeat": "$step_count",
+      "repeat_default": 5,
+      "text": "## Step {n}\n\nProcess action for this stage.",
+      "width": 300,
+      "height": 120,
+      "color": "$color_body"
+    }
+  ],
+  "edge_templates": [
+    {
+      "from_role": "step",
+      "to_role": "step",
+      "pattern": "sequential"
+    }
+  ]
+}

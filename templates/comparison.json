@@ -1,0 +1,72 @@
+{
+  "name": "Comparison",
+  "description": "Side-by-side columns for comparing two options with a criteria section below.",
+  "layout": "grid",
+  "defaults": {
+    "criteria_count": 4,
+    "columns": 2,
+    "color_title": "6",
+    "color_body": "5",
+    "color_accent": "4"
+  },
+  "node_templates": [
+    {
+      "role": "option_a_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Option A",
+      "width": 500,
+      "height": 300,
+      "color": "$color_body"
+    },
+    {
+      "role": "option_b_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Option B",
+      "width": 500,
+      "height": 300,
+      "color": "$color_accent"
+    },
+    {
+      "role": "criteria_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Criteria Comparison",
+      "width": 1060,
+      "height": 500,
+      "color": "$color_title"
+    },
+    {
+      "role": "option_a_desc",
+      "type": "text",
+      "repeat": 1,
+      "group_role": "option_a_zone",
+      "text": "## Option A\n\nDescribe this option's strengths and approach.",
+      "width": 440,
+      "height": 200,
+      "color": "$color_body"
+    },
+    {
+      "role": "option_b_desc",
+      "type": "text",
+      "repeat": 1,
+      "group_role": "option_b_zone",
+      "text": "## Option B\n\nDescribe this option's strengths and approach.",
+      "width": 440,
+      "height": 200,
+      "color": "$color_accent"
+    },
+    {
+      "role": "criteria",
+      "type": "text",
+      "repeat": "$criteria_count",
+      "repeat_default": 4,
+      "group_role": "criteria_zone",
+      "text": "### Criteria {n}\n\n**Option A**: ...\n**Option B**: ...\n**Winner**: ?",
+      "width": 460,
+      "height": 160
+    }
+  ],
+  "edge_templates": []
+}

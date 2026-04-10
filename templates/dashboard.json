@@ -1,0 +1,63 @@
+{
+  "name": "Dashboard",
+  "description": "Project status board with a header, metric cards in a Key Metrics zone, and an empty Status & Notes zone.",
+  "layout": "linear-vertical",
+  "defaults": {
+    "metric_count": 4,
+    "gap": 100,
+    "color_title": "6",
+    "color_body": "4",
+    "color_accent": "5"
+  },
+  "node_templates": [
+    {
+      "role": "header_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Dashboard",
+      "width": 1200,
+      "height": 200,
+      "color": "$color_title"
+    },
+    {
+      "role": "header",
+      "type": "text",
+      "repeat": 1,
+      "group_role": "header_zone",
+      "text": "# $title\n\nProject dashboard — last updated today.",
+      "width": 500,
+      "height": 120,
+      "color": "$color_title"
+    },
+    {
+      "role": "metrics_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Key Metrics",
+      "width": 1200,
+      "height": 300,
+      "color": "$color_accent"
+    },
+    {
+      "role": "metric",
+      "type": "text",
+      "repeat": "$metric_count",
+      "repeat_default": 4,
+      "group_role": "metrics_zone",
+      "text": "### Metric {n}\n\n**Value**: —\n**Target**: —\n**Status**: Pending",
+      "width": 260,
+      "height": 160,
+      "color": "$color_body"
+    },
+    {
+      "role": "status_zone",
+      "type": "group",
+      "repeat": 1,
+      "label": "Status & Notes",
+      "width": 1200,
+      "height": 300,
+      "color": "$color_body"
+    }
+  ],
+  "edge_templates": []
+}
