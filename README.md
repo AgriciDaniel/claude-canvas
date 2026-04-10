@@ -1,5 +1,7 @@
 # claude-canvas
 
+![claude-canvas cover](assets/cover.png)
+
 AI-orchestrated visual production for [Obsidian Canvas](https://obsidian.md/canvas). Create presentations, flowcharts, mood boards, knowledge graphs, and galleries with intelligent layout and AI-generated content.
 
 Claude acts as **Creative Director** — describe what you want and get a fully populated, professionally laid-out canvas.
@@ -115,6 +117,32 @@ scripts/                       Python CLI tools (validate, layout, template)
 templates/                     12 JSON Canvas archetypes
 bin/setup.sh                   Install optional Python dependencies
 ```
+
+## Screenshots
+
+### Full Feature Showcase
+*AI images, SVG architecture diagram, Mermaid charts, callouts, and zones — all in one canvas*
+![Showcase](assets/screenshots/demo-canvas-showcase-all.png)
+
+### AI Image Gallery
+*8 diverse AI-generated images arranged in an auto-laid-out gallery zone*
+![Gallery](assets/screenshots/real-image-gallery-demo.png)
+
+### Presentation Mode
+*6-slide deck with real content, Mermaid diagrams, and edge navigation for Advanced Canvas*
+![Presentation](assets/screenshots/demo-real-presentation.png)
+
+### Mind Map (Radial Layout)
+*Auto-applied radial layout expanding from central topic*
+![Mind Map](assets/screenshots/mind-map-demo.png)
+
+### Comparison Template
+*Side-by-side option zones with criteria comparison section*
+![Comparison](assets/screenshots/comparison-canvas-demo.png)
+
+### Project Brief
+*Stacked zones: header, objectives with KPIs, and deliverables*
+![Project Brief](assets/screenshots/project-brief-demo.png)
 
 ## Attribution
 
