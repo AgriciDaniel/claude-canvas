@@ -151,3 +151,14 @@ claude-canvas originated from the `/canvas` skill in [claude-obsidian](https://g
 ## Attribution
 
 Built by [AgriciDaniel](https://github.com/AgriciDaniel). Canvas format follows the [JSON Canvas 1.0](https://jsoncanvas.org/) open standard by the Obsidian team.
+
+---
+
+## Author
+
+Built by [Agrici Daniel](https://agricidaniel.com/about) - AI Workflow Architect.
+
+- [Blog](https://agricidaniel.com/blog) - Deep dives on AI marketing automation
+- [AI Marketing Hub](https://www.skool.com/ai-marketing-hub) - Free community, 2,800+ members
+- [YouTube](https://www.youtube.com/@AgriciDaniel) - Tutorials and demos
+- [All open-source tools](https://github.com/AgriciDaniel)
