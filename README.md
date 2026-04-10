@@ -144,6 +144,10 @@ bin/setup.sh                   Install optional Python dependencies
 *Stacked zones: header, objectives with KPIs, and deliverables*
 ![Project Brief](assets/screenshots/project-brief-demo.png)
 
+## Origin
+
+claude-canvas originated from the `/canvas` skill in [claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian) — a knowledge companion for Obsidian vaults. The original skill handles wiki-scoped visual boards. claude-canvas extends this into a full visual production system for any project.
+
 ## Attribution
 
 Built by [AgriciDaniel](https://github.com/AgriciDaniel). Canvas format follows the [JSON Canvas 1.0](https://jsoncanvas.org/) open standard by the Obsidian team.
