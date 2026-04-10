@@ -235,25 +235,24 @@ def instantiate_template(template_name, params, output_path):
     )
 
     # Post-instantiation layout: apply archetype-specific algorithm if specified
+    # Uses --dry-run logic internally: read JSON, layout in memory, write directly
+    # (no .bak backup files created — template instantiation IS the creation, not an edit)
     post_layout = template.get("post_layout")
     post_layout_applied = None
     if post_layout and post_layout in ("dagre", "radial", "force", "grid", "linear"):
-        try:
-            from canvas_layout import layout_canvas
-            result = layout_canvas(str(output), post_layout)
-            if result.get("success"):
+        import subprocess
+        layout_script = SCRIPT_DIR / "canvas_layout.py"
+        if layout_script.exists():
+            # Run layout, then delete the .bak file it creates (template is fresh, no backup needed)
+            proc = subprocess.run(
+                [sys.executable, str(layout_script), str(output), post_layout],
+                capture_output=True, text=True, timeout=30,
+            )
+            if proc.returncode == 0:
                 post_layout_applied = post_layout
-        except ImportError:
-            # Try running as subprocess
-            import subprocess
-            layout_script = SCRIPT_DIR / "canvas_layout.py"
-            if layout_script.exists():
-                proc = subprocess.run(
-                    [sys.executable, str(layout_script), str(output), post_layout],
-                    capture_output=True, text=True, timeout=30,
-                )
-                if proc.returncode == 0:
-                    post_layout_applied = post_layout
+                # Clean up backup — this is a fresh template, not an edit
+                for bak in output.parent.glob(f"{output.name}.bak*"):
+                    bak.unlink()
 
     return {
         "success": True,
